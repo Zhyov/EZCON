@@ -13,10 +13,12 @@ while not command == "stop":
             command = "stop"
         else:
             command = "blank"
-        help = "Command List/Help: help | list | log | command | calculate"
+        help = "Command List/Help: help | list | log | command | calculate | close | stop"
         if text == "list":
+            command = "help"
             print(help)
         if text == "help":
+            command = "help"
             print(help)
         if text == "log":
             while not command == "exit":
