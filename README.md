@@ -1,7 +1,8 @@
 # EZCON
 EZCON is a console I made while learning python.
 
-#Features:
+**Features:**
+
 Commands (In-Dev)
 Print Text (Log)
 Calculator
