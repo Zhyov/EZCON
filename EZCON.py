@@ -1,6 +1,7 @@
 import random
+import math
 command = "blank"
-print("         © 2022 EZCON By LukeBlack952")
+print(" © 2022 EZCON By LukeBlack952 | Version 0.0.3")
 print('Type "help" or "list" for the list of commands')
 print()
 while not command == "stop":
@@ -14,13 +15,26 @@ while not command == "stop":
             command = "stop"
         else:
             command = "blank"
-        help = "Command List/Help: help | list | log | command | calculate | close | stop | rps"
+        help = "Command List/Help: help | list | log | command | calculate | close | stop | rps | auto-count"
         if text.upper() == "LIST":
             command = "help"
             print(help)
         if text.upper() == "HELP":
             command = "help"
             print(help)
+        if text.upper() == "AUTO-COUNT":
+            while not command == "exit":
+                alert = input("This may lag low-end divices, are you sure you want to use it: ")
+                if alert.upper() == "YES":
+                    text = input("Count to: ")
+                    maxNum = int(text)
+                    num = 1
+                    while num <= maxNum:
+                        print("Auto Count: " + str(num))
+                        num += 1
+                    print("Done!")
+                elif alert.upper() == "NO":
+                    command = "exit"
         if text.upper() == "RPS":
             while not command == "exit":
                 text = input("Choose Between Rock, Paper or Scissors: ")
@@ -93,7 +107,7 @@ while not command == "stop":
                     print(help)
         if text.upper() == "CALCULATE":
             while not command == "exit":
-                text = input("Calculation Type (Plus | Minus | Divided By | Times | To the Power): ")
+                text = input("Calc Type (Plus | Minus | Divided By | Times | To the Power | To the Square Root): ")
                 if text.upper() == "PLUS":
                     first = input("Number: ")
                     first = str(first)
@@ -138,6 +152,12 @@ while not command == "stop":
                     second = str(second)
                     print("> " + second)
                     answer = float(first) ** float(second)
+                    print(float(answer))
+                elif text.upper() == "TO THE SQUARE ROOT":
+                    first = input("Number: ")
+                    first = str(first)
+                    print("> " + first)
+                    answer = math.sqrt(float(first))
                     print(float(answer))
                 if text.upper() == "EXIT":
                     command = "exit"
